@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Foksen/DoCSA-2
+          search-paths: Pr8/config
+          default-label: master
+          clone-on-start: true
+          timeout: 10
+        native:
+          search-locations: file:///app/config
+        health:
+          enabled: true
+
+server:
+  port: 8888
+
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
