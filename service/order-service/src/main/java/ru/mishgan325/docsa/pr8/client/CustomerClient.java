@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import ru.mishgan325.docsa.pr8.dto.CustomerDto;
 
-@FeignClient(name = "customer-service")
+@FeignClient(name = "customer-service", configuration = FeignConfig.class)
 public interface CustomerClient {
 
     @GetMapping("/customers/{id}")
